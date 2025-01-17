@@ -9,8 +9,7 @@ import eslintConfigPrettier from "eslint-config-prettier";
 import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
 import eslintSecurity from "eslint-plugin-security";
 import simpleImportSort from "eslint-plugin-simple-import-sort";
-import eslintPluginJest from "eslint-plugin-jest";
-import eslintPluginJestDom from "eslint-plugin-jest-dom";
+import eslintPluginVitest from "eslint-plugin-vitest";
 import eslintPluginTestLibrary from "eslint-plugin-testing-library";
 import tailwind from "eslint-plugin-tailwindcss";
 
@@ -71,8 +70,7 @@ const config = [
     },
     plugins: {
       "simple-import-sort": simpleImportSort,
-      jest: eslintPluginJest,
-      "jest-dom": eslintPluginJestDom,
+      vitest: eslintPluginVitest,
       "testing-library": eslintPluginTestLibrary,
     },
     rules: {
