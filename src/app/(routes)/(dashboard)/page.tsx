@@ -15,7 +15,7 @@ export async function HelloWorld() {
   const data = await fetchWrapper<IHelloWorldResponse>("hello");
   return (
     <div>
-      <h1>{data?.welcome}</h1>
+      <h1 className="text-2xl text-red-500">{data?.welcome}</h1>
     </div>
   );
 }

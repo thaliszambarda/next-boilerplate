@@ -11,7 +11,6 @@ import eslintSecurity from "eslint-plugin-security";
 import simpleImportSort from "eslint-plugin-simple-import-sort";
 import eslintPluginVitest from "eslint-plugin-vitest";
 import eslintPluginTestLibrary from "eslint-plugin-testing-library";
-import tailwind from "eslint-plugin-tailwindcss";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -33,16 +32,10 @@ const config = [
       parser: eslintParser,
       parserOptions: {
         project: "./tsconfig.json",
+        ecmaFeatures: {
+          jsx: true,
+        },
       },
-    },
-  },
-  {
-    plugins: {
-      tailwindcss: tailwind,
-    },
-    rules: {
-      "tailwindcss/classnames-order": "warn",
-      "tailwindcss/no-custom-classname": "off",
     },
   },
   {
@@ -75,12 +68,26 @@ const config = [
     },
     rules: {
       "prettier/prettier": "warn",
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/no-var-requires": "off",
       "react/react-in-jsx-scope": "off",
       "no-console": "warn",
       "linebreak-style": ["warn", "unix"],
       camelcase: "warn",
       quotes: ["warn", "double"],
       semi: ["warn", "always"],
+      "jsx-a11y/alt-text": [
+        "warn",
+        {
+          elements: ["img"],
+          img: ["Image"],
+        },
+      ],
+      "jsx-a11y/aria-props": "warn",
+      "jsx-a11y/aria-proptypes": "warn",
+      "jsx-a11y/aria-unsupported-elements": "warn",
+      "jsx-a11y/role-has-required-aria-props": "warn",
+      "jsx-a11y/role-supports-aria-props": "warn",
       "jsx-a11y/anchor-is-valid": "warn",
       "simple-import-sort/imports": "warn",
       "simple-import-sort/exports": "warn",
